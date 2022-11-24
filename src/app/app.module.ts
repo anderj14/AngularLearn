@@ -1,3 +1,4 @@
+import { MaterialModule } from './material.module';
 import { InicioComponent } from './inicio.component';
 import { LibroComponent } from './libro/libro.component';
 import { NgModule } from '@angular/core';
@@ -9,6 +10,7 @@ import { UsuarioComponent } from './usuario.component';
 import { FormsModule } from '@angular/forms';
 import { LibrosComponent } from './libros/libros.component';
 import { LibrosService } from './services/libros.service';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -22,6 +24,8 @@ import { LibrosService } from './services/libros.service';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    BrowserAnimationsModule,
+    MaterialModule,
   ],
   providers: [LibrosService],
   bootstrap: [AppComponent]
