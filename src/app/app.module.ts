@@ -1,3 +1,4 @@
+import { InicioComponent } from './inicio.component';
 import { LibroComponent } from './libro/libro.component';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
@@ -14,7 +15,8 @@ import { LibrosService } from './services/libros.service';
     AppComponent,
     UsuarioComponent,
     LibrosComponent,
-    LibroComponent
+    LibroComponent,
+    InicioComponent
   ],
   imports: [
     BrowserModule,
