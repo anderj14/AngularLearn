@@ -1,4 +1,9 @@
+import { Subject } from 'rxjs';
+
 export class LibrosService {
+
+  librosSubject = new Subject();
+
   private libros = [
     'Libro de Vaxi',
     'Libro de Aritmetica',
@@ -7,6 +12,7 @@ export class LibrosService {
 
   agregarLibro(libroNombre: string) {
     this.libros.push(libroNombre);
+    this.librosSubject.next();
   }
 
   obtenerLibros() {
