@@ -1,3 +1,4 @@
+import { LibrosService } from './../services/libros.service';
 import { Component } from '@angular/core';
 
 @Component({
@@ -5,15 +6,18 @@ import { Component } from '@angular/core';
   templateUrl: 'libros.component.html',
 })
 export class LibrosComponent {
-  libros = ['Matematica I', 'Algoritmos basico', 'Algebra nivel basico'];
+
+  libros: any[] = [];
+
+  constructor(private librosService: LibrosService){
+    this.libros = librosService.obtenerLibros();
+  }
 
   eliminarLibro(libro: string){
-    this.libros = this.libros.filter(p => p !== libro);
   }
 
   guardarLibro(f){
     if(f.valid){
-      this.libros.push(f.value.nombreLibro);
     }
   }
 }
